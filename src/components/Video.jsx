@@ -11,7 +11,7 @@ const Video = () =>
         autoplay: false,
         controls: true,
         responsive: true,
-        fluid: false,
+        fluid: true,
         sources: [{
             src: fxVideo,
             type: 'video/mp4'
@@ -35,8 +35,10 @@ const Video = () =>
     };
 
     return (
-        <div className='flex justify-center'>
-            <VideoJs options={videoJsOptions} onReady={handlePlayerReady} />
+        <div className='flex justify-center items-center w-full h-full p-4'>
+            <div className='w-full max-w-screen-lg'>
+                <VideoJs options={videoJsOptions} onReady={handlePlayerReady} />
+            </div>
         </div>
     );
 }
